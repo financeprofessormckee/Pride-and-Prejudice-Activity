@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mr. Bennet’s Fortune</title>
+  <title>Mr. Bennet's Fortune</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Chart.js via CDN -->
@@ -11,34 +14,58 @@
 </head>
 <body>
   <main class="wrap">
-    <h1>Mr. Bennet’s Decision</h1>
-    <p>
-        You are Mr. Bennet. Your task is to build a fund that can support your dependents  (wife and 5 daughters) after your death.
+    <header class="page-header">
+      <h1>Mr. Bennet's Decision</h1>
+      <p class="epigraph">
+        "Mr. Bennet had very often wished before this period of his life that, instead of spending his whole income,
+        he had laid by an annual sum, for the better provision of his children, and of his wife, if she survived him."
+        <span class="epigraph-source">— Chapter 50, <em>Pride &amp; Prejudice</em></span>
+      </p>
+      <p class="intro">
+        You are Mr. Bennet. Your task is to build a fund that can support your dependents (wife and 5 daughters) after your death.
         Adjust the sliders to see how saving, time, and interest change the outcome.
-    </p>
+      </p>
+    </header>
 
-<div class="card">
-  <h2>Case assumptions</h2>
-  <ul>
-    <li><strong>Dependents:</strong> 6 (Mrs. Bennet + 5 daughters)</li>
-    <li><strong>Income interest rate choices:</strong> 4% or 5%</li>
-    <li><strong>Target income per person:</strong> $25,000 per year</li>
-  </ul>
+    <div class="ornament">&#10022;</div>
 
-  <p class="small">
-    The tool estimates "income per person" as: <strong>final balance × income rate ÷ number of dependents</strong>
-  </p>
-</div>
+    <div class="card">
+      <h2>Case Assumptions</h2>
+      <ul>
+        <li><strong>Annual household income:</strong> $175,000 (inflation-adjusted)</li>
+        <li><strong>Household members:</strong> 7 (Mr. &amp; Mrs. Bennet + 5 daughters) &rarr; $25,000 per person per year</li>
+        <li><strong>Dependents after death:</strong> 6 (Mrs. Bennet + 5 daughters)</li>
+        <li><strong>Income interest rate choices:</strong> 4% or 5% (historical government bond rates)</li>
+      </ul>
+
+      <h3>The Challenge</h3>
+      <p>
+        If Mr. Bennet saves consistently, can the fund generate <strong>$25,000 per dependent per year</strong>
+        &mdash; matching the current per-person living standard?
+      </p>
+      <p class="small">
+        Target derived from: $175,000 &divide; 7 household members = <strong>$25,000 per person per year</strong>
+      </p>
+
+      <p class="small">
+        Income per dependent is estimated as: <strong>final balance &times; income rate &divide; 6 dependents</strong>
+        (perpetuity model &mdash; only interest is withdrawn, principal is preserved).
+        The tool uses the same rate for investment growth and income generation, a standard simplifying assumption.
+      </p>
+    </div>
+
+    <div class="ornament">&#10022;</div>
 
     <section class="card">
       <label>
-        Annual contribution ($):
-        <input id="contrib" type="range" min="17500" max="35000" step="500" value="10000" />
+        Annual contribution:
+        <input id="contrib" type="range" min="17500" max="35000" step="500" value="17500" />
         <span id="contribVal"></span>
+        <span class="input-sub" id="contribPct"></span>
       </label>
 
       <label>
-        Years:
+        Years saving:
         <input id="years" type="range" min="1" max="50" value="25" />
         <span id="yearsVal"></span>
       </label>
@@ -56,8 +83,9 @@
 
     <section class="card">
       <h2>Results</h2>
-      <p>Future value: <strong id="fv"></strong></p>
-      <p>Annual income per daughter: <strong id="incomePer"></strong></p>
+      <p>Accumulated fund: <strong id="fv"></strong></p>
+      <p>Annual income per dependent: <strong id="incomePer"></strong></p>
+      <div id="challengeResult"></div>
     </section>
 
     <section class="card">
