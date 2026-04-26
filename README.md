@@ -26,20 +26,5 @@ To help students understand the underlying math, the tool relies on the followin
 * **Income Calculation:** The annual income per dependent is estimated as: `(Final Balance × Income Rate) ÷ 6 Dependents`.
 * **Rate Consistency:** The simulation uses the same interest rate for both the accumulation phase (investment growth) and the income generation phase as a standard simplifying assumption.
 
-### Assignment Suggestions
-You can use this interactive tool as the foundation for a homework assignment or case study write-up. 
-
-**1. The "What If" Scenario Analysis**
-Have students experiment with the sliders to find the exact combination of variables required to hit the $25,000 per dependent target. Because starting late makes the target mathematically difficult to reach, this clearly demonstrates the power of compound interest over time.
-
-**2. Utilizing the "Copy Summary" Feature**
-The app includes a built-in "Copy summary" button. You can require students to paste their final simulation results directly into their Learning Management System or written case study. The output generates a clean text block including:
-* **Inputs:** Annual Contribution (%), Years Saving, Interest Rate, and Dependents.
-* **Outputs:** Accumulated Fund (FV), Annual Income per Dependent, and the percentage of the target goal reached (e.g., *Insufficient: 19% of $25,000 target*).
-
-### Discussion Prompts
-* How does changing the historical bond yield from 4% to 5% impact the required annual contribution?
-* If Mr. Bennet saves 10% of his income ($17,500/year) for 25 years at 4%, the fund only reaches $728,803, providing just $4,859 per dependent. What realistic sacrifices would the family have to make today to reach the $25,000 goal for tomorrow?
-
 ---
 *Created by [Eric McKee](https://github.com/financeprofessormckee).*
