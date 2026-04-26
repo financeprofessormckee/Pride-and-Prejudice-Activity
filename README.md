@@ -26,5 +26,11 @@ To help students understand the underlying math, the tool relies on the followin
 * **Income Calculation:** The annual income per dependent is estimated as: `(Final Balance × Income Rate) ÷ 6 Dependents`.
 * **Rate Consistency:** The simulation uses the same interest rate for both the accumulation phase (investment growth) and the income generation phase as a standard simplifying assumption.
 
+### License and Citation
+
+The source code for this web application is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the software.
+
+The pedagogical framing, narrative text, and specific simulation parameters (The "Mr. Bennet's Problem" scenario) are the intellectual property of Eric McKee. If you use or adapt this simulation for your own courses, please cite this repository.
+
 ---
 *Created by [Eric McKee](https://github.com/financeprofessormckee).*
