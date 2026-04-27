@@ -1,4 +1,4 @@
-# Mr. Bennet's Problem
+# Mr. Bennet's Decision
 
 **[Click Here to Launch the Interactive Activity](https://financeprofessormckee.github.io/Pride-and-Prejudice-Activity/)**
 
