@@ -3,16 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mr. Bennet's Fortune</title>
+  <title>Mr. Bennet's Decision</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,400&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/cob-brand.css" />
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Chart.js via CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  <!-- WT COB institutional masthead (shared) -->
+  <header class="cob-brand" role="banner">
+    <div class="cob-brand__inner">
+      <img class="cob-brand__seal" src="assets/cob-seal.png" alt="West Texas A&amp;M University · Paul and Virginia Engler College of Business seal">
+      <div class="cob-brand__wordmark">
+        <span class="cob-brand__university">West Texas A&amp;M University</span>
+        <span class="cob-brand__college">Paul and Virginia Engler College of Business</span>
+      </div>
+    </div>
+    <div class="cob-brand__rule"></div>
+  </header>
   <main class="wrap">
     <header class="page-header">
       <h1>Mr. Bennet's Decision</h1>
@@ -32,19 +44,19 @@
     <div class="card">
       <h2>Case Assumptions</h2>
       <ul>
-        <li><strong>Annual household income:</strong> $175,000 (inflation-adjusted)</li>
-        <li><strong>Household members:</strong> 7 (Mr. &amp; Mrs. Bennet + 5 daughters) &rarr; $25,000 per person per year</li>
+        <li><strong>Annual household income:</strong> <span id="incomeDisplay"></span></li>
+        <li><strong>Household members:</strong> 7 (Mr. &amp; Mrs. Bennet + 5 daughters) &rarr; <span class="target-display"></span> per person per year</li>
         <li><strong>Dependents after death:</strong> 6 (Mrs. Bennet + 5 daughters)</li>
         <li><strong>Income interest rate choices:</strong> 4% or 5% (historical government bond rates)</li>
       </ul>
 
       <h3>The Challenge</h3>
       <p>
-        If Mr. Bennet saves consistently, can the fund generate <strong>$25,000 per dependent per year</strong>
+        If Mr. Bennet saves consistently, can the fund generate <strong><span class="target-display"></span> per dependent per year</strong>
         &mdash; matching the current per-person living standard?
       </p>
       <p class="small">
-        Target derived from: $175,000 &divide; 7 household members = <strong>$25,000 per person per year</strong>
+        Target derived from: <span id="incomeFormula"></span> &divide; 7 household members = <strong><span class="target-display"></span> per person per year</strong>
       </p>
 
       <p class="small">
@@ -78,6 +90,12 @@
         </select>
        </label>
 
+      <div class="currency-toggle">
+        <span>Display currency:</span>
+        <label><input type="radio" name="currency" value="USD" checked /> $ USD (Modern)</label>
+        <label><input type="radio" name="currency" value="GBP" /> £ GBP (Historical, 1813)</label>
+      </div>
+
       <p><strong>Dependents:</strong> <span id="peopleVal"></span></p>
     </section>
 
@@ -99,5 +117,8 @@
   </main>
 
   <script src="app.js"></script>
+  <footer class="bottombar">
+    <span>Time Value of Money in Regency England — a teaching simulation. Made by Eric McKee.</span>
+  </footer>
 </body>
 </html>
