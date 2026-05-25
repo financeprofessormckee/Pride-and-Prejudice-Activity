@@ -1,4 +1,4 @@
-# Mr. Bennet's Decision
+# Principal & Prejudice: The Austen Annuity App
 
 **[Click Here to Launch the Interactive Activity](https://financeprofessormckee.github.io/Pride-and-Prejudice-Activity/)**
 
@@ -30,7 +30,7 @@ To help students understand the underlying math, the tool relies on the followin
 
 The source code for this web application is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the software.
 
-The pedagogical framing, narrative text, and specific simulation parameters (The "Mr. Bennet's Problem" scenario) are the intellectual property of Eric McKee. If you use or adapt this simulation for your own courses, please cite this repository.
+The pedagogical framing, narrative text, and specific simulation parameters (The "Principal & Prejudice: The Austen Annuity App" scenario) are the intellectual property of Eric McKee. If you use or adapt this simulation for your own courses, please cite this repository.
 
 ---
 *Created by [Eric McKee](https://github.com/financeprofessormckee).*
